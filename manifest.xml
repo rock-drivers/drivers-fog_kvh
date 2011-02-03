@@ -9,5 +9,6 @@
     <cpp cflags="" lflags="" />
   </export>
 	<depend package="drivers/iodrivers_base" />
+	<depend package="drivers/aggregator" />
 </package>
 
