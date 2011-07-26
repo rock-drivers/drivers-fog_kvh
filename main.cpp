@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <sys/time.h>
+#include <iostream>
 
 using namespace std;
 
@@ -21,7 +22,12 @@ int main(int argc, char**argv){
 
 
 	dsp3000::Driver ifg;
-	ifg.init(argv[1]);
+        std::cout << "Trying to open FOG..." << std::endl;
+	bool worked = ifg.init(argv[1]);
+        if(!worked)
+           std::cout << "Could not open FOG on port " << argv[1] << "." << std::endl;
+        else
+           std::cout << "done!" << std::endl;
 	double sum=0;
 	timeval last,current;
 	int cnt=0;
