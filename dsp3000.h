@@ -10,15 +10,15 @@
 
 #include <iodrivers_base.hh>
 
-namespace dsp3000{
+namespace fog_kvh{
 
-class Driver : public IODriver 
+class Dsp3000Driver : public IODriver 
 {
 
 public:
 
-	Driver();
-	~Driver();
+	Dsp3000Driver();
+	~Dsp3000Driver();
 	int getReadFD();
 	bool init(std::string const &port);
 	/**

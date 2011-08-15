@@ -21,7 +21,7 @@ int main(int argc, char**argv){
 	}
 
 
-	dsp3000::Driver ifg;
+	fog_kvh::Dsp3000Driver ifg;
         std::cout << "Trying to open FOG..." << std::endl;
 	bool worked = ifg.init(argv[1]);
         if(!worked)

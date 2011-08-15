@@ -14,27 +14,27 @@
 #include <cstdio>
 #include <math.h>
 
-namespace dsp3000{
+namespace fog_kvh{
 
-Driver::Driver():
+Dsp3000Driver::Dsp3000Driver():
 	IODriver(512,false){
 
 }
 
-bool Driver::init(std::string const &port){
+bool Dsp3000Driver::init(std::string const &port){
 		return openSerial(port,38400);
 }
 
-Driver::~Driver() {
+Dsp3000Driver::~Dsp3000Driver() {
 
 }
 
-int Driver::getReadFD() {
+int Dsp3000Driver::getReadFD() {
 	return getFileDescriptor();
 }
 
 
-bool Driver::toRate(){
+bool Dsp3000Driver::toRate(){
 	uint8_t buff[3];
 	buff[0] = 'R';
 	buff[1] = '\n';
@@ -42,7 +42,7 @@ bool Driver::toRate(){
 	return writePacket(buff,2,80);
 }
 
-bool Driver::toIncremental(){
+bool Dsp3000Driver::toIncremental(){
 	uint8_t buff[3];
 	buff[0] = 'A';
 	buff[1] = '\n';
@@ -50,7 +50,7 @@ bool Driver::toIncremental(){
 	return writePacket(buff,2,80);
 }
 
-bool Driver::toIntegradted(){
+bool Dsp3000Driver::toIntegradted(){
 	uint8_t buff[3];
 	buff[0] = 'P';
 	buff[1] = '\n';
@@ -59,7 +59,7 @@ bool Driver::toIntegradted(){
 }
 
 
-bool Driver::reset(){
+bool Dsp3000Driver::reset(){
 	uint8_t buff[3];
 	buff[0] = 'Z';
 	buff[1] = '\n';
@@ -67,7 +67,7 @@ bool Driver::reset(){
 	return writePacket(buff,2,80);
 }
 
-bool Driver::getState(double &delta){
+bool Dsp3000Driver::getState(double &delta){
     try {
 	int bufsize = 512;
 	uint8_t packed[bufsize];
@@ -94,7 +94,7 @@ bool Driver::getState(double &delta){
 }
 
 
-int Driver::extractPacket(uint8_t const* buffer, size_t buffer_size) const {
+int Dsp3000Driver::extractPacket(uint8_t const* buffer, size_t buffer_size) const {
 		if(buffer_size<21){
 			return 0; //Packed is never complete yet complete yet
 		}
