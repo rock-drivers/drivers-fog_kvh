@@ -5,8 +5,8 @@
  * Desc:
  *
 */
-#ifndef _DSP3000_H__
-#define _DSP3000_H_ 
+#ifndef _DSP3000DRIVER_H_
+#define _DSP3000DRIVER_H_ 
 
 #include <iodrivers_base.hh>
 
