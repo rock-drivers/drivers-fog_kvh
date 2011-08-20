@@ -4,7 +4,7 @@ libdir=${prefix}/lib
 includedir=${prefix}/include
 
 Name: dsp3000 
-Description: KVH DSP 3000 Driver 
+Description: KVH FOG driver
 Version: @PROJECT_VERSION@
-Libs: -L${libdir} -ldsp3000
+Libs: -L${libdir} -lfog_kvh
 Cflags: -I${includedir}
