@@ -80,15 +80,10 @@ bool Dsp3000Driver::getState(double &delta){
 	while(packed[pos+1] == 0x20 && pos<21)pos++;
 	if(pos>=21) return false;
 
-	//for(int i=pos;i<21;i++){
-	//	printf("%c",packed[i]);
-	//}
-	//printf("\n");
 	float i=0;
 	sscanf((const char*)packed+pos,"%f",&i);
 	i = i/180.0*M_PI;
 	delta = -i;
-	//printf("Ok: %f\n",i);	
 	return true;
     } catch (timeout_error) { return false; }
 }

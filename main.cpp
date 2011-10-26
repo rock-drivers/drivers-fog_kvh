@@ -26,9 +26,8 @@ int main(int argc, char**argv){
 	bool worked = ifg.init(argv[1]);
         if(!worked)
            std::cout << "Could not open FOG on port " << argv[1] << "." << std::endl;
-        else
-           std::cout << "done!" << std::endl;
-	double sum=0;
+	
+        double sum=0;
 	timeval last,current;
 	int cnt=0;
 	double avg=0;
