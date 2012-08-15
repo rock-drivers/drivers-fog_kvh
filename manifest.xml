@@ -5,5 +5,6 @@
   <author>Matthias Goldhoorn/matthias.goldhoorn@dfki.de</author>
   <license>LGPL v2 or later</license>
   <depend package="drivers/iodrivers_base" />
+  <tags>stable</tags>
 </package>
 
