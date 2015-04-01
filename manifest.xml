@@ -3,6 +3,7 @@
   This library is a device driver for the KVH FOG DSP3000. This FOG is also used in Tritech underwater FOG.
   </description>
   <author>Matthias Goldhoorn/matthias.goldhoorn@dfki.de</author>
+  <maintainer>Matthias Goldhoorn/matthias.goldhoorn@uni-bremen.de</maintainer>
   <license>LGPL v2 or later</license>
   <depend package="drivers/iodrivers_base" />
   <tags>stable</tags>
